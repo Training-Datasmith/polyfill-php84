@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony package.
  *
@@ -26,50 +28,83 @@ if (defined('CURL_VERSION_HTTP3') || PHP_VERSION_ID < 80200 && function_exists('
 }
 
 if (!function_exists('array_find')) {
-    function array_find(array $array, callable $callback) { return p\Php84::array_find($array, $callback); }
+    function array_find(array $array, callable $callback)
+    {
+        return p\Php84::array_find($array, $callback);
+    }
 }
 
 if (!function_exists('array_find_key')) {
-    function array_find_key(array $array, callable $callback) { return p\Php84::array_find_key($array, $callback); }
+    function array_find_key(array $array, callable $callback)
+    {
+        return p\Php84::array_find_key($array, $callback);
+    }
 }
 
 if (!function_exists('array_any')) {
-    function array_any(array $array, callable $callback): bool { return p\Php84::array_any($array, $callback); }
+    function array_any(array $array, callable $callback): bool
+    {
+        return p\Php84::array_any($array, $callback);
+    }
 }
 
 if (!function_exists('array_all')) {
-    function array_all(array $array, callable $callback): bool { return p\Php84::array_all($array, $callback); }
+    function array_all(array $array, callable $callback): bool
+    {
+        return p\Php84::array_all($array, $callback);
+    }
 }
 
 if (!function_exists('fpow')) {
-    function fpow(float $num, float $exponent): float { return p\Php84::fpow($num, $exponent); }
+    function fpow(float $num, float $exponent): float
+    {
+        return p\Php84::fpow($num, $exponent);
+    }
 }
 
 if (extension_loaded('mbstring')) {
     if (!function_exists('mb_ucfirst')) {
-        function mb_ucfirst(string $string, ?string $encoding = null): string { return p\Php84::mb_ucfirst($string, $encoding); }
+        function mb_ucfirst(string $string, ?string $encoding = null): string
+        {
+            return p\Php84::mb_ucfirst($string, $encoding);
+        }
     }
 
     if (!function_exists('mb_lcfirst')) {
-        function mb_lcfirst(string $string, ?string $encoding = null): string { return p\Php84::mb_lcfirst($string, $encoding); }
+        function mb_lcfirst(string $string, ?string $encoding = null): string
+        {
+            return p\Php84::mb_lcfirst($string, $encoding);
+        }
     }
 
     if (!function_exists('mb_trim')) {
-        function mb_trim(string $string, ?string $characters = null, ?string $encoding = null): string { return p\Php84::mb_trim($string, $characters, $encoding); }
+        function mb_trim(string $string, ?string $characters = null, ?string $encoding = null): string
+        {
+            return p\Php84::mb_trim($string, $characters, $encoding);
+        }
     }
 
     if (!function_exists('mb_ltrim')) {
-        function mb_ltrim(string $string, ?string $characters = null, ?string $encoding = null): string { return p\Php84::mb_ltrim($string, $characters, $encoding); }
+        function mb_ltrim(string $string, ?string $characters = null, ?string $encoding = null): string
+        {
+            return p\Php84::mb_ltrim($string, $characters, $encoding);
+        }
     }
 
     if (!function_exists('mb_rtrim')) {
-        function mb_rtrim(string $string, ?string $characters = null, ?string $encoding = null): string { return p\Php84::mb_rtrim($string, $characters, $encoding); }
+        function mb_rtrim(string $string, ?string $characters = null, ?string $encoding = null): string
+        {
+            return p\Php84::mb_rtrim($string, $characters, $encoding);
+        }
     }
 }
 
 if (extension_loaded('bcmath')) {
     if (!function_exists('bcdivmod')) {
-        function bcdivmod(string $num1, string $num2, ?int $scale = null): ?array { return p\Php84::bcdivmod($num1, $num2, $scale); }
+        function bcdivmod(string $num1, string $num2, ?int $scale = null): ?array
+        {
+            return p\Php84::bcdivmod($num1, $num2, $scale);
+        }
     }
 }
 
@@ -78,5 +113,8 @@ if (\PHP_VERSION_ID >= 80200) {
 }
 
 if (extension_loaded('intl') && !function_exists('grapheme_str_split')) {
-    function grapheme_str_split(string $string, int $length = 1) { return p\Php84::grapheme_str_split($string, $length); }
+    function grapheme_str_split(string $string, int $length = 1)
+    {
+        return p\Php84::grapheme_str_split($string, $length);
+    }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony package.
  *
@@ -16,5 +18,8 @@ if (\PHP_VERSION_ID >= 80400) {
 }
 
 if (extension_loaded('intl') && !function_exists('grapheme_str_split')) {
-    function grapheme_str_split(string $string, int $length = 1): array|false { return p\Php84::grapheme_str_split($string, $length); }
+    function grapheme_str_split(string $string, int $length = 1): array|false
+    {
+        return p\Php84::grapheme_str_split($string, $length);
+    }
 }
