@@ -33,7 +33,7 @@ if (\PHP_VERSION_ID < 80400) {
 
             $this->name = ltrim($name, '\\');
             $deprecated = false;
-            $eh = set_error_handler(static function ($type, $msg, $file, $line) use ($name, &$deprecated, &$eh) {
+            $eh = set_error_handler(static function ($type, $msg, $file, $line) use ($name, &$deprecated, &$eh): bool {
                 if (\E_DEPRECATED === $type && "Constant $name is deprecated" === $msg) {
                     return $deprecated = true;
                 }
@@ -138,9 +138,8 @@ if (\PHP_VERSION_ID < 80400) {
                 // the behavior of zval_get_string_func()
                 $result .= (string) $this->value;
             }
-            $result .= " }\n";
 
-            return $result;
+            return $result . " }\n";
         }
 
         public function __sleep(): array
