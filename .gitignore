@@ -1,0 +1,5 @@
+/vendor/
+composer.lock
+composer-setup.php
+composer-setup.sig
+composer.phar
