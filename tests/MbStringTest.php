@@ -82,17 +82,6 @@ class MbStringTest extends TestCase
         mb_ucfirst('a', 'NULL');
     }
 
-    /**
-     * @requires PHP < 8
-     */
-    public function testInvalidEncodingThrowsValueErrorOnPhp7WithStub()
-    {
-        $this->expectException(\ValueError::class);
-        $this->expectExceptionMessage('must be a valid encoding');
-
-        mb_trim("\u{180F}", '', 'NULL');
-    }
-
     public function testMbTrimDefaultWhitespace()
     {
         $this->assertSame('ABC', mb_trim("\0\t\nABC \0\t\n"));
